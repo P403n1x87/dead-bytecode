@@ -91,7 +91,7 @@ _stack_effects = {
 
 def stack_effect(opcode, oparg=None, jump=None):
     def nargs(o):
-        return int((o % 256) + 2 * (o / 256))
+        return (o & 255) + ((o >> 7) & -2)
 
     oparg = oparg or 0
     # TODO: Can add check for when oparg is required
