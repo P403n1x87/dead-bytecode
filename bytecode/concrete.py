@@ -290,8 +290,7 @@ class ConcreteBytecode(_bytecode._BaseBytecodeList):
             if instr.name == "EXTENDED_ARG":
                 nb_extended_args += 1
                 if extended_arg is not None:
-                    raise ValueError("EXTENDED_ARG followed " "by EXTENDED_ARG")
-                    extended_arg = (extended_arg << 8) + instr.arg
+                    raise ValueError("EXTENDED_ARG followed by EXTENDED_ARG")
                 else:
                     extended_arg = instr.arg
 
